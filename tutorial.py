@@ -34,8 +34,8 @@ def trade_spider(max_pages):
                 title = in_link.string
                 source = in_link.get('href')
                 if "http" not in source:
-                    source = "https://www.reddit.com/" + source
-                data_href_url ="https://www.reddit.com/" +  in_link.get("data-href-url")
+                    source = first_url + source
+                data_href_url =first_url + in_link.get("data-href-url")
                 data = { 'title'    : title,
                          'source'   : source,
                          'reddit_url':data_href_url,
